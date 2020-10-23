@@ -1,0 +1,19 @@
+
+
+ <!--<div class="modal fade " id="view-message" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+    <div class="modal-dialog modal-dialog-centered modal-lg modal_view_message" role="document">
+        <div class="modal-content">
+            <div class="modal-header d-flex flex-column flex-lg-row">
+              <p class="mb-2 mb-lg-0"><span class="font_semi">Order Id<span class="mx-2 mx-lg-3">:</span></span>{{userMessage.OrderId}}</p>
+              <p class="d-flex flex-row flex-wrap"><span class="font_semi ml-lg-auto">Application Name <span class="mx-2 mx-lg-3">:</span></span>{{userMessage.ApplicantName}}</p>
+            </div>
+            <div class="modal-body">
+              {{userMessage.Message}}
+            </div>
+            <div class="modal-footer border-0  py-lg-4 my-lg-2 px-lg-5">
+              <button type="button" class="btn mr-3" data-dismiss="modal" (click)="hideUserMessageViewComponent()" routerLink="/user-messages/{{userMessage.UserId}}"><i class="fas fa-reply mr-3"></i> Reply</button>
+              <button type="button" class="btn " (click)="hideUserMessageViewComponent()" data-dismiss="modal"><i class="fa fa-times mr-3"></i> Close</button>
+            </div>
+        </div>
+    </div>
+<!--</div>-->

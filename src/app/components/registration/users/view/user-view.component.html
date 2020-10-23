@@ -1,0 +1,83 @@
+<!-- <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+  <h1 class="h2">Dashboard</h1>
+</div> -->
+<div class="main-content d-flex flex-column" *ngIf="showComponent">
+	<div class="dashboard_head d-flex w-100 flex-column pb-xl-2">
+		<div class="d-flex flex-column flex-md-row">
+			<h1 class="color_light_gray">{{users.firstName}} {{users.lastName}}</h1>
+			<form class="form-inline mt-3 mt-md-0 ml-md-auto current_status" *ngIf="users.orderStatus!=null">
+				<label for="inputPassword6" class="mr-3">Current Status</label>
+				<div class="form-group d-flex mb-0">
+					<div class="input-group-prepend">
+						<span class="input-group-text bg-success text-white" id="basic-addon1"
+							*ngIf="users.orderStatus==orderstatus.Completed"><i class="fas fa-check"></i> </span>
+						<span class="input-group-text bg-warning text-white" id="basic-addon1"
+							*ngIf="users.orderStatus==orderstatus.InProgress"><i class="fas fa-hourglass-half"></i>
+						</span>
+					</div>
+					<label class="form-control form-control-sm flex-grow-1 h-auto border-0"><span
+							*ngIf="users.orderStatus==orderstatus.Completed">Completed</span><span
+							*ngIf="users.orderStatus==orderstatus.InProgress">InProgress</span></label>
+				</div>
+			</form>
+		</div>
+		<div class="order_date_section d-flex mt-4">
+			<div class="flex-grow-1 d-none d-md-flex align-items-center pr-3">
+				<hr class="w-100">
+			</div>
+			<div class="order_date" *ngIf="users.orderStatus!=null">
+				<i class="far fa-calendar-alt"></i>
+				<span><b>Ordered :</b> {{users.orderedOn}}</span>
+				<span *ngIf="users.orderStatus==orderstatus.Completed"><b>Completed :</b>
+					{{users.orderCompletedOn}}</span>
+			</div>
+		</div>
+	</div>
+	<div class="author_info bg-white row mx-0 mt-4">
+		<div class="col-md-6 col-lg-4 col-xl-2 mb-4 mb-xl-5">
+			<label class="d-block">Alias</label>
+			<span *ngIf="users.alias">{{users.alias}}</span>
+			<span *ngIf="!users.alias">N/A</span>
+		</div>
+		<div class="col-md-6 col-lg-4 col-xl-2 mb-4 mb-xl-5">
+			<label class="d-block">Date of Birth</label>
+			<span *ngIf="users.dob">{{users.dob}}</span>
+			<span *ngIf="!users.dob">N/A</span>
+		</div>
+		<div class="col-md-6 col-lg-4 col-xl-1 mb-4 mb-xl-5">
+			<label class="d-block">Age</label>
+			<span *ngIf="users.dob">{{age}}</span>
+			<span *ngIf="!users.dob">N/A</span>
+		</div>
+		<div class="col-md-6 col-lg-4 col-xl-2 mb-4 mb-xl-5">
+			<label class="d-block">Ethnicity</label>
+			<span *ngIf="users.ethnicity">{{users.ethnicity}}</span>
+			<span *ngIf="!users.ethnicity">N/A</span>
+		</div>
+		<div class="col-md-6 col-lg-4 col-xl-2 mb-4 mb-xl-5">
+			<label class="d-block">Home Phone</label>
+			<span *ngIf="users.userPhonenumber.phoneNumber">{{users.userPhonenumber.phoneNumber}}</span>
+			<span *ngIf="!users.userPhonenumber.phoneNumber">N/A</span>
+		</div>
+		<div class="col-md-6 col-lg-4 col-xl-2 mb-4 mb-xl-5">
+			<label class="d-block">Education:</label>
+			<span *ngIf="users.userEducations.institution"> {{users.userEducations.institution}},
+				{{users.userEducations.institutionType}}, {{users.userEducations.degreeType}}</span>
+			<span *ngIf="!users.userEducations.institution">N/A</span>
+		</div>
+		<div class="col-md-6 col-lg-4 col-xl-4 mb-4 mb-xl-5">
+			<label class="d-block"> <span *ngIf="users.userAddress.userAddressType==addresstype.Current">Current</span>
+				<span *ngIf="users.userAddress.userAddressType==addresstype.Past">Past</span> Address:</label>
+			<span *ngIf="users.userAddress.state"> {{users.userAddress.address}}, {{users.userAddress.city}},
+				{{users.userAddress.stateName}}, {{users.userAddress.zip}}</span>
+			<span *ngIf="!users.userAddress.state">N/A</span>
+		</div>
+	</div>
+	<div *ngIf="users.orderStatus==orderstatus.Completed" class="text-center text-md-right my-4 pt-2">
+		<a href={{users.reportUrl}} class="btn btn-black mt-2 mt-md-0 mr-2 mr-md-4"><i class="fas fa-eye mr-2"></i> View
+			Report</a>
+		<a href={{users.reportUrl}} target="_blank" class="btn btn-black mt-2 mt-md-0"><i
+				class="fas fa-download mr-2"></i> Download Report</a>
+	</div>
+	<!-- <p class="copyright bg_gray  text-white text-right mb-0 mt-auto dashboard_copyright">© <script type="text/javascript">document.write(new Date().getFullYear());</script> Social Discovery. All rights reserved.</p> -->
+</div>

@@ -1,0 +1,31 @@
+
+  <div class="modal-dialog modal-dialog-centered payment_status_popup" *ngIf="isSucess"  role="document">
+    <div class="modal-content">
+    
+      <div class="modal-body text-center">
+        <div class="popup_icon popup_icon_success">
+            <i class="fas fa-check"></i>
+        </div>
+        <h2 class="h1 text-success mb-3">Congratulation !</h2>
+        <p class="mb-0">Your payment has been successful.</p>
+        <p class="mb-0">Your Transaction Id is <b>{{transactionId}}</b></p>
+        <button (click)="logOut()" (keydown.enter)="logOut()" class="btn btn-black text-uppercase my-4 my-lg-5 px-5 btn-bold">Login</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal-dialog modal-dialog-centered payment_status_popup status_sorry" *ngIf="!isSucess" role="document">
+      <div class="modal-content">
+      
+        <div class="modal-body text-center">
+          <div class="popup_icon popup_icon_sorry">
+              <i class="fas fa-times"></i>
+          </div>
+          <h2 class="h1 mb-3">Sorry !</h2>
+          <p class="mb-0">Your transaction has failed.</p>
+          <p class="mb-0">Please, go back and try again.</p>
+          <button (click)="closePopup()" (keydown.enter)="closePopup()" class="btn btn-black text-uppercase my-4 my-lg-5 px-5 btn-bold">Back</button>
+        </div>
+      </div>
+    </div>

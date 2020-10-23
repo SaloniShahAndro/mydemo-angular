@@ -1,0 +1,53 @@
+	<div class="login_page d-flex justify-content-center align-items-center flex-column bg_gray">
+		<div class="login_container d-flex align-items-center flex-grow-1"  *ngIf="!isforgotPassword">
+		<div class="login_box text-center">
+			<a href="/home"><img src="assets/images/logo.png" class="img-fluid"></a>
+				<div class="mt-3 mt-xl-5 pt-2">
+
+          <form [formGroup]="loginFormGroup">
+			  <div class="form-group">
+			    <input type="text" placeholder="Username *" rxFocus="true" formControlName="userName"  class="form-control input_bg input_icon username_icon" id="userName">
+			  </div>
+			  <div class="form-group">
+			    <input type="password" formControlName="password" name="password" placeholder="Password *" class="form-control input_bg input_icon password_icon" id="pwd">
+			  </div>
+			  <button type="submit" (click)="login()" [disabled]="!loginFormGroup.valid" class="btn btn-black">Login</button>
+			</form>
+ 
+		
+		</div>
+			<p class="mt-3 mt-xl-5 mb-0">
+				<a *ngIf="!isforgotPassword" (click)="isforgotPassword=true" href="JavaScript:Void(0)">Forgot Password ?</a>
+				<a *ngIf="isforgotPassword" (click)="isforgotPassword=false" href="JavaScript:Void(0)">Login</a>
+				
+				or <a routerLink="/users/add">Register</a></p>
+		</div>
+	</div>
+
+
+	<div class="login_container d-flex align-items-center justify-content-center flex-grow-1" *ngIf="isforgotPassword">
+			<div class="login_box text-center">
+				<a href="/" class="d-inline-block"><img src="assets/images/logo.png" class="img-fluid"></a>
+					<div class="">
+						<hr class="my-3 my-md-4 my-xl-5 fg_divider">
+						<h1 class="text_orange">Forgot Password</h1>
+						<p class="mb-3 mb-xl-5">Please enter UserName or login</p>
+				<form [formGroup]="forgotPasswordFormGroup" >
+					<div class="form-group">
+						<input type="text" formControlName="userName" placeholder="Username *" class="form-control input_bg input_icon username_icon">
+					</div>
+					
+					<button type="submit" (click)="forgotPassword()" [disabled]="!forgotPasswordFormGroup.valid" class="btn btn-black">Submit</button>
+				</form>
+			</div>
+			<p class="mt-3 mt-xl-5 mb-0">
+					<a *ngIf="!isforgotPassword" (click)="isforgotPassword=true" href="JavaScript:Void(0)">Forgot Password ?</a>
+					<a *ngIf="isforgotPassword" (click)="isforgotPassword=false" href="JavaScript:Void(0)">Login</a>
+					
+					or <a routerLink="/users/add">Register</a></p>
+			</div>
+		</div>
+
+
+		<p class="login_copyright copyright bg_gray color_theme mt-2 mb-0">© {{currentYear}} Social Discovery. All rights reserved.</p>
+	</div>

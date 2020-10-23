@@ -1,0 +1,83 @@
+<div class="main-content d-flex flex-column">
+<div class="d-flex dashboard_info_container mb-1 flex-wrap" *ngIf="showComponent">
+    <div class="col-md-6 col-xl-3 info_panel info_completed mb-4 mb-xl-0 pr-0 pr-md-3">
+        <div class="w-100 border py-3 px-4 bg-white rounded d-flex flex-column">
+            <p class="">Completed</p>
+            <div class="d-flex info_panel_status align-items-center">
+                <span class="sd-like-thumb"></span><div class="ml-auto">{{statusCount.completed}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3 info_panel info_progress pr-0 pr-xl-3 mb-4 mb-xl-0 pl-0 pl-md-3">
+        <div class="w-100 border py-3 px-4 bg-white rounded d-flex flex-column">
+            <p class="">InProgress</p>
+            <div class="d-flex info_panel_status align-items-center">
+                <span class="sd-progress"></span><div class="ml-auto">{{statusCount.inProgress}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3 info_panel info_personal_package mb-4 mb-md-0 pl-0 pl-xl-3 pr-0 pr-md-3">
+        <div class="w-100 border py-3 px-4 bg-white rounded d-flex flex-column">
+            <p class="">Total Personal Package</p>
+            <div class="d-flex info_panel_status align-items-center">
+                <span class="sd-personal"></span><div class="ml-auto">{{statusCount.personalPackage}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-3 info_panel info_employment_package  pl-0 pl-md-3">
+        <div class="w-100 border py-3 px-4 bg-white rounded d-flex flex-column ">
+            <p class="">Total employment Package</p>
+            <div class="d-flex info_panel_status align-items-center">
+                <span class="sd-tie"></span><div class="ml-auto">{{statusCount.employersPackage}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="mt-4  bg-white admin_message_container border px-0" *ngIf="showComponent">
+    <div class="table-responsive" *ngIf="userOrders">
+    <div class="d-flex p-3 flex-column flex-sm-row align-items-sm-center">
+		<h4 class="font_bold ml-lg-2 mb-4 mb-sm-0">Clients Details</h4>
+		<!-- <form class="ml-auto"> -->
+		<div class="input-group message_search ml-sm-auto">			
+          <input type="search" class="form-control " name="SearchEvent" (keyup)="tableEvent.searchAll($event.target.value)" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2">
+		  <button class="input-group-append bg-white border-0 px-0">
+			<span class="input-group-text bg-white" id="basic-addon2"><i class="fas fa-search"></i></span>
+		  </button>
+		</div>
+		<!-- </form> -->
+		</div>
+
+	
+     
+            <rx-table class="past_search_table"  [totalCount]="totalCount" [pageSize]="5" #tableEvent="grid"
+            [sortableConfig]="sortableConfig"  [(dataSource)]="userOrders.vPastOrder"
+            [isStoreProc]="false" [isFilter]="isFilter">           
+            <rx-column field="orderId" sortable="true" title="Id"></rx-column>
+              <rx-column field="userName"  title="User Name"></rx-column>  
+              <rx-column field="applicantName"  title="Applicant Name"></rx-column>  
+              <rx-column field="age"  title="Age"></rx-column>  
+              <rx-column field="orderDate"  title="Order Date"></rx-column>  
+              <rx-column field="packageName"  title="Package"></rx-column>
+              <rx-column field="paymentStatus" title="Payment Status"></rx-column>
+              <rx-column field="orderStatus" title="Order Status"></rx-column>
+              <rx-column field="" [disabledSorting]="true" title="Download">
+              <ng-template rxCellTemplate let-pastOrder>
+                <ul class="d-flex addmin_message_action pl-0 mb-0">
+                  <li><a class="" href={{pastOrder.reportLink}}><i class="far fa-eye"></i></a></li>
+                  <li><a class="" href={{pastOrder.reportLink}}><i class="fas fa-download"></i></a></li>
+                </ul>
+                </ng-template> -
+              </rx-column>
+              
+            </rx-table>
+            
+              
+	</div>
+
+	
+</div>
+</div>

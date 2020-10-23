@@ -1,0 +1,52 @@
+<div class="main-content d-flex flex-column">
+
+    <h1 class="dashboard_title pb-3 pb-lg-5 border-bottom">Messages</h1>
+    
+    <div class="chat_container d-flex flex-column px-0 mt-3 mt-lg-5 bg-white" *ngIf="showComponent">
+        <div class="chat_head border-bottom px-3  py-2  m-0">
+            <p class="m-0 ">{{userFullName}}'s Messages</p>
+        </div>
+
+        
+        <div class="chat_body">
+
+            <div class="chat_thread" *ngIf="!userMessages[0]">
+                <p > No records found</p>
+            </div>
+            
+            <div class="chat_thread" *ngIf="userMessages">
+                 <div *ngIf="role == 1">
+            <fieldset *ngFor="let data of userMessages" >
+
+            <div class="col-10 col-xl-8 px-0 d-flex" *ngIf="data.userType==2"> 
+            <p class="chat_message ">{{data.message}} <span class="chat_time align-self-end">{{data.createdOn}}</span></p>
+            </div>
+          
+
+            <div class="col-10 col-xl-8 px-0 ml-auto d-flex" *ngIf="data.userType==1"> 
+            <p class="chat_message message_send ml-auto ">{{data.message}}<span class="chat_time align-self-end">{{data.createdOn}} </span></p>
+            </div>
+
+            </fieldset>
+        </div>
+        <div *ngIf="role == 2">
+                <fieldset *ngFor="let data of userMessages" >
+    
+                <div class="col-10 col-xl-8 px-0 d-flex" *ngIf="data.userType==1"> 
+                <p class="chat_message ">{{data.message}} <span class="chat_time align-self-end">{{data.createdOn}}</span></p>
+                </div>
+              
+    
+                <div class="col-10 col-xl-8 px-0 ml-auto d-flex" *ngIf="data.userType==2"> 
+                <p class="chat_message message_send ml-auto ">{{data.message}}<span class="chat_time align-self-end">{{data.createdOn}} </span></p>
+                </div>
+    
+                </fieldset>
+            </div>
+
+            
+        </div>
+        <app-add-message [clientId]="clientId"></app-add-message>
+        </div>
+    </div>
+  

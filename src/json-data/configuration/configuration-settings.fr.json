@@ -1,0 +1,188 @@
+{
+  "changeDetection": true,
+  "defaultLanguage": "English",
+  "authorization": {
+    "cacheMinutes": 30
+  },
+  "spinner": {
+    "loadingText": "Loading... Changes BA"
+  },
+  "dataOperation": {
+    "post": "Data added successfully BA",
+    "put": "Data updated successfully BA",
+    "delete": "Data deleted successfully BA"
+  },
+  "toastr": {
+    "showClose": false,
+    "position": "bottom-right",
+    "status": "success",
+    "timeOut": 5000
+  },
+  "popup": {
+    "validationFailed": {
+      "title": "Validation Failed BA",
+      "ok": "Ok BA"
+    },
+    "unauthorized": {
+      "oops": "Oops BA",
+      "message": "You don't have access right of this item BA",
+      "ok": "Ok BA"
+    }
+  },
+  "dialog": {
+    "okText": "Ok BA",
+    "cancelText": "Cancel BA",
+    "style": {
+      "main": "",
+      "header": "alert-header",
+      "body": "",
+      "footer": "",
+      "okClick": "",
+      "cancelClick": "",
+      "secondaryClick": ""
+    },
+    "confirmation": {
+      "okText": "Yes BA",
+      "cancelText": "No BA",
+      "title": "Please confirm! BA",
+      "messageType": {
+        "delete": "Are you sure you want to delete '{0}' ? BA",
+        "inactive": "are you sure you want to inactive '{0}' ? BA",
+        "active": "Are you sure you want to active '{0}' ? BA"
+      },
+      "style": {
+        "okClick": "",
+        "cancelClick": ""
+      }
+    },
+    "alert": {
+      "okText": "Ok BA",
+      "title": "Alert! BA",
+      "style": {
+        "okClick": ""
+      }
+    },
+    "saveConfirmation": {
+      "title": "Data lost confirmation! BA",
+      "saveText": "Save BA",
+      "dontSaveText": "Don't Save BA",
+      "style": {
+        "okClick": "",
+        "secondaryClick": "",
+        "cancelClick": ""
+      }
+    },
+    "discardChanges": {
+      "okText": "Yes",
+      "cancelText": "No",
+      "title": "Alert",
+      "messageType": {
+        "delete": "Are you sure you want to discard the changes?"
+      },
+      "style": {
+        "okClick": "",
+        "cancelClick": ""
+      }
+    },
+    "validation": {
+      "okText": "Ok",
+      "title": "Alert",
+      "style": {
+        "okClick": ""
+      }
+    }
+  },
+  "placeholder": {
+    "text": "Pleaseter the value of BA",
+    "select": "Please select the value of BA",
+    "checkbox": "Please choose the value of BA",
+    "radio": "Please choose the value of BA",
+    "file": "Please upload BA",
+    "textarea": "",
+    "password": "Pleaseter the value of BA",
+    "email": ""
+  },
+  "validation": {
+    "messageDisplayType": "Both",
+    "message": {
+      "default": {
+        "required": "You can't leave this empty BA",
+        "minlength": "Minimum #n# characters required BA",
+        "maxlength": "More than #n# characters are not permitted BA",
+        "pattern": "The specified input format is not recognized BA",
+        "compare": "The specified values of '#field1#' and '#field2#' must be the same BA",
+        "contains": "The specified value must '#value#' in the input BA",
+        "alpha": "You can use letters and periods only BA",
+        "alphanumeric": "You can use letters, numbers and periods only BA",
+        "range": "You need toter appropriate value in this field BA",
+        "numeric": "You can use numbers only",
+        "capital": "Please enter at least 1 capital letter",
+        "number": "Please enter atleast 1 number",
+        "small": "Please enter at least 1 small character",
+        "specialcharacter": "Please enter at least 1 special character"
+      },
+      "custom": {
+        "userNameRequired": "This UserName is Required."
+      }
+    }
+  },
+  "internationalization": {
+    "currencyCode": "",
+    "viewDefaultDateFormatName": "shortDate",
+    "date": {
+      "format": "",
+      "seperator": "",
+      "short": "M/d/yy, h:mm a",
+      "medium": "MMMM, d  y, h:mm:ss a",
+      "full": "EEEE, MMMM d, y, h:mm:ss a ",
+      "shortDate": "M/d/yy",
+      "mediumDate": "MMM d, y",
+      "longDate": "MMMM d, y",
+      "fullDate": "EEEE, MMMM d, y",
+      "shortTime": "h:mm a",
+      "mediumTime": "h:mm:ss a",
+      "fullTime": "h:mm:ss a zzzz"
+    }
+  },
+  "control": {
+    "rxMessage": {
+      "invalidHtml": "<span class='invalid'>*</span>"
+    },
+    "rxTag": {
+      "splitCharacter": ",",
+      "message": {
+        "maxSelection": "You can only select {maxSelection items BA"
+      }
+    },
+    "rxTable": {
+      "formatters": {
+        "date": "dd/mm/yyyy",
+        "defaultDateFormat": "full"
+      },
+      "pageSizes": [
+        5,
+        10,
+        20,
+        30,
+        40,
+        50
+      ],
+      "pageSize": 10,
+      "controlClass": {
+        "table": "table table-bordered dataTable no-footer dtr-inline"
+      },
+      "masterClass": {
+        "asc": "sorting_asc fa fa-arrow-up right-arrow",
+        "desc": "sorting_desc fa fa-arrow-down right-arrow",
+        "openDetail": "fa fa-minus",
+        "closeDetail": "fa fa-plus"
+      },
+      "label": {
+        "footerText": "Showing {{startNumber}} to {{endNumber}} of {{totalNumber}} entries",
+        "notFound": "Records not found",
+        "dataNotAvailable": "Data Not Available"
+      }
+    }
+  },
+  "cacheKeys": {}
+}

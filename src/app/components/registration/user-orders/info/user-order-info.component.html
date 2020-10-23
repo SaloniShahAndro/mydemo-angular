@@ -1,0 +1,243 @@
+<div class="container-fluid body_bg pt-5" *ngIf="showComponent">
+    <div class="container">
+        <h1 class="bottom_border center text-center font_bold color_orange mt-5 pt-5"> Our Packages </h1>
+        <p class="text-center mt-3 mb-4 pb-3">Please select any of the following package. </p>
+        <div class="package_container" *ngIf="!isPaymentVerified">
+            <!-- Package head -->
+            <div class="row package_head">
+                <div class="col-xl-4 ml-auto"></div>
+                <ng-template ngFor let-package [ngForOf]="uniquePackages">
+                    <div class="col-xl-4 package_employer ml-auto text-center" *ngIf="package.packageId==1">
+                        <p class="new__package__title">Social Media Screening</p>
+                        <h3 class="big--package--title">{{package.packageName}}</h3>
+                        <hr class="package--table--line">
+                        <!-- <p class="priceForCreateIT">Price For CreateIT</p> -->
+                        <p class="package_price">${{package.packagePrice}}</p>
+                        <!--<a href="" id="{{package.packageId}}" class="package_buy">Buy Now</a>-->
+                    </div>
+                    <div class="col-xl-4 d-none d-md-block package_personal text-center" *ngIf="package.packageId==2 ">
+                        <p class="new__package__title">Social Media Screening</p>
+                        <h3 class="big--package--title">{{package.packageName}}</h3>
+                        <hr class="package--table--line">
+                        <!-- <p class="priceForCreateIT">Price For CreateIT</p> -->
+                        <p class="package_price">${{package.packagePrice}}</p>
+                        <!--<a href="" id="{{package.packageId}}" class="package_buy">Buy Now</a>-->
+                    </div>
+                </ng-template>
+            </div>
+            <!-- Package head -->
+            <!-- Package listing -->
+            <!-- <ng-template ngFor let-packageDetails [ngForOf]="uniquePackageDetails">
+                <div class="row package_list">
+                    <div class="col packge_list_item">{{packageDetails.packageDetailName}}</div>
+                    <div class="col-xl-4 package_status text-center">
+                        <i class="fas fa-check" *ngIf="packageDetails.isEmployee==1"></i>
+                        <div *ngIf="packageDetails.isEmployee!==1"> - </div>
+                    </div>
+                    <div class="col-xl-4 package_status d-none d-md-block text-center">
+                        <i class="fas fa-check" *ngIf="packageDetails.isEmployee==1 && packageDetails.isPersonal==1"></i>
+                        <i class="fas fa-check text-danger" *ngIf="packageDetails.isEmployee!==1 && packageDetails.isPersonal==1"></i>
+                    </div>
+                </div>
+            </ng-template> -->
+            <div class="row package_list">
+                <div class="col packge_list_item text-center">Scope</div>
+                <div class="col-xl-4 package_status text-center">
+                    <p class="packegeInsideContent">3 Years</p>
+                </div>
+                <div class="col-xl-4 package_status d-none d-md-block text-center">
+                    <p class="packegeInsideContent">7 Years</p>
+                </div>
+            </div>
+            <div class="row package_list">
+                <div class="col packge_list_item text-center">Reviews</div>
+                <div class="col-xl-4 package_status text-center">
+                    <p class="packegeInsideContent">Facebook, Instagram, LinkedIn, Pinterest, Twitter only</p>
+                </div>
+                <div class="col-xl-4 package_status d-none d-md-block text-center">
+                    <p class="packegeInsideContent"> Anywhere the candidate could have user-generated online accounts or
+                        profiles</p>
+                </div>
+            </div>
+            <div class="row package_list">
+                <div class="col packge_list_item text-center">Red Flags</div>
+                <div class="col-xl-4 package_status text-center">
+                    <p class="packegeInsideContent">Violent behavior, Illegal activity, Racism and/or demonstrations of
+                        intolerance, Sexually explicit content</p>
+                </div>
+                <div class="col-xl-4 package_status d-none d-md-block text-center">
+                    <p class="packegeInsideContent">Violent behavior, Illegal activity, Racism and/or demonstrations of
+                        intolerance, Sexually explicit content</p>
+                </div>
+            </div>
+            <div class="row package_list">
+                <div class="col packge_list_item"></div>
+                <ng-template ngFor let-package [ngForOf]="uniquePackages">
+                    <div class="col-xl-4 package_status text-center" *ngIf="package.packageId==1"> <a [routerLink]=""
+                            (click)="selectPackage(package.packageId)"
+                            class="btn btn-black btn-bold my-3 text-uppercase">${{package.packagePrice}}
+                            | Buy Now</a></div>
+                    <div class="col-xl-4 package_status text-center d-none d-md-block" *ngIf="package.packageId==2 "><a
+                            [routerLink]="" (click)="selectPackage(package.packageId)"
+                            class="btn btn-orange btn-bold my-3 text-uppercase">${{package.packagePrice}}
+                            | Buy Now</a></div>
+                </ng-template>
+            </div>
+            <!-- Package listing -->
+        </div>
+        <!-- for mobile  -->
+        <div class="package_container d-block d-md-none " *ngIf="!isPaymentVerified">
+            <div class="row package_head">
+                <div class="col-xl-4 ml-auto"></div>
+                <!-- <ng-template ngFor let-package [ngForOf]="uniquePackages">
+                    <div class="col-xl-4 d-none d-md-block package_personal text-center" *ngIf="package.packageId==1">
+                        <p class="package_title">{{package.packageName}}</p>
+                        <p class="package_price">{{package.packagePrice}}$</p>
+                        <a href="" id="{{package.packageId}}" class="package_buy">Buy Now</a>
+                    </div>
+                    <div class="col-xl-4 package_personal ml-auto text-center" *ngIf="package.packageId==2 ">
+                        <p class="package_title">{{package.packageName}}</p>
+                        <p class="package_price">{{package.packagePrice}}$</p>
+                        <a href="" id="{{package.packageId}}" class="package_buy">Buy Now</a>
+                    </div>
+                </ng-template> -->
+                <ng-template ngFor let-package [ngForOf]="uniquePackages">
+                    <div class="col-xl-4 d-none package_employer ml-auto text-center" *ngIf="package.packageId==1">
+                        <p class="new__package__title">Social Media Screening</p>
+                        <h3 class="big--package--title">{{package.packageName}}</h3>
+                        <hr class="package--table--line">
+                        <!-- <p class="priceForCreateIT">Price For CreateIT</p> -->
+                        <p class="package_price">${{package.packagePrice}}</p>
+                        <!--<a href="" id="{{package.packageId}}" class="package_buy">Buy Now</a>-->
+                    </div>
+                    <div class="col-xl-4 package_personal ml-auto text-center" *ngIf="package.packageId==2 ">
+                        <p class="new__package__title">Social Media Screening</p>
+                        <h3 class="big--package--title">{{package.packageName}}</h3>
+                        <hr class="package--table--line">
+                        <!-- <p class="priceForCreateIT">Price For CreateIT</p> -->
+                        <p class="package_price">${{package.packagePrice}}</p>
+                        <!--<a href="" id="{{package.packageId}}" class="package_buy">Buy Now</a>-->
+                    </div>
+                </ng-template>
+            </div>
+            <!--<ng-template ngFor let-packageDetails [ngForOf]="uniquePackageDetails">
+                <div class="row package_list">
+                    <div class="col packge_list_item">{{packageDetails.packageDetailName}}</div>
+                    <div class="col-xl-4 package_status d-none d-md-block text-center">
+                        <i class="fas fa-check" *ngIf="packageDetails.isEmployee==1"></i>
+                        <div *ngIf="packageDetails.isEmployee!==1"> - </div>
+                    </div>
+                    <div class="col-xl-4 package_status text-center ">
+                        <i class="fas fa-check" *ngIf="packageDetails.isEmployee==1 && packageDetails.isPersonal==1"></i>
+                        <i class="fas fa-check text-danger" *ngIf="packageDetails.isEmployee!==1 && packageDetails.isPersonal==1"></i>
+                    </div>
+                </div>
+            </ng-template>-->
+            <div class="row package_list">
+                <div class="col packge_list_item text-center">Scope</div>
+                <div class="col-xl-4 package_status d-none d-md-block text-center">
+                    <p class="packegeInsideContent">3 Years</p>
+                </div>
+                <div class="col-xl-4 package_status text-center">
+                    <p class="packegeInsideContent">7 Years</p>
+                </div>
+            </div>
+            <div class="row package_list">
+                <div class="col packge_list_item text-center">Reviews</div>
+                <div class="col-xl-4 package_status text-center">
+                    <p class="packegeInsideContent">Facebook, Instagram, LinkedIn, Pinterest, Twitter only</p>
+                </div>
+                <div class="col-xl-4 package_status d-none d-md-block text-center">
+                    <p class="packegeInsideContent"> Anywhere the candidate could have user-generated online accounts or
+                        profiles</p>
+                </div>
+            </div>
+            <div class="row package_list">
+                <div class="col packge_list_item text-center">Red Flags</div>
+                <div class="col-xl-4 package_status text-center">
+                    <p class="packegeInsideContent">Violent behavior, Illegal activity, Racism and/or demonstrations of
+                        intolerance, Sexually explicit content</p>
+                </div>
+                <div class="col-xl-4 package_status d-none d-md-block text-center">
+                    <p class="packegeInsideContent">Violent behavior, Illegal activity, Racism and/or demonstrations of
+                        intolerance, Sexually explicit content</p>
+                </div>
+            </div>
+            <div class="row package_list">
+                <div class="col packge_list_item"></div>
+                <ng-template ngFor let-package [ngForOf]="uniquePackages">
+                    <div class="col-xl-4 package_status text-center d-none d-md-block" *ngIf="package.packageId==1"> <a
+                            [routerLink]="" (click)="selectPackage(package.packageId)"
+                            class="btn btn-black btn-bold my-3 text-uppercase">${{package.packagePrice}}
+                            | Buy Now</a></div>
+                    <div class="col-xl-4 package_status text-center" *ngIf="package.packageId==2"><a [routerLink]=""
+                            (click)="selectPackage(package.packageId)"
+                            class="btn btn-orange btn-bold my-3 text-uppercase">${{package.packagePrice}}
+                            | Buy Now</a></div>
+                </ng-template>
+            </div>
+        </div>
+        <div class="package_container d-block" *ngIf="isPaymentVerified">
+            <div class="row package_head">
+                <div class="col ml-auto"></div>
+                <ng-template ngFor let-package [ngForOf]="uniquePackages">
+                    <div class="col package_personal ml-auto text-center" *ngIf="package.packageId==2 ">
+                        <p class="new__package__title">Social Media Screening</p>
+                        <h3 class="big--package--title">{{package.packageName}}</h3>
+                        <hr class="package--table--line">
+                        <!-- <p class="priceForCreateIT">Price For CreateIT</p> -->
+                        <p class="package_price">${{package.packagePrice}}</p>
+                    </div>
+                </ng-template>
+            </div>
+            <!-- <ng-template ngFor let-packageDetails [ngForOf]="uniquePackageDetails">
+                <div class="row package_list">
+                    <div class="col packge_list_item">{{packageDetails.packageDetailName}}</div>
+                    <div class="col-xl-4 package_status text-center ">
+                        <i class="fas fa-check"
+                            *ngIf="packageDetails.isEmployee==1 && packageDetails.isPersonal==1"></i>
+                        <i class="fas fa-check text-danger"
+                            *ngIf="packageDetails.isEmployee!==1 && packageDetails.isPersonal==1"></i>
+                    </div>
+                </div>
+            </ng-template> -->
+
+            <div class="row package_list">
+                <div class="col packge_list_item text-center">Scope</div>
+                <div class="col package_status text-center">
+                    <p class="packegeInsideContent">7 Years</p>
+                </div>
+            </div>
+            <div class="row package_list">
+                <div class="col packge_list_item text-center">Reviews</div>
+                <div class="col package_status text-center">
+                    <p class="packegeInsideContent"> Anywhere the candidate could have user-generated online accounts or
+                        profiles</p>
+                </div>
+            </div>
+            <div class="row package_list">
+                <div class="col packge_list_item text-center">Red Flags</div>
+                <div class="col package_status  text-center">
+                    <p class="packegeInsideContent">Violent behavior, Illegal activity, Racism and/or demonstrations of
+                        intolerance, Sexually explicit content</p>
+                </div>
+            </div>
+
+            <div class="row package_list">
+                <div class="col packge_list_item"></div>
+                <ng-template ngFor let-package [ngForOf]="uniquePackages">
+                    <!-- <div class="col-xl-4 package_status text-center" *ngIf="package.packageId==2"><a [routerLink]=""
+                            (click)="selectPackage(package.packageId)"
+                            class="btn btn-orange btn-bold my-3 text-uppercase">${{package.packagePrice}}
+                            | Value</a></div> -->
+
+                    <div class="col package_status text-center" *ngIf="package.packageId==2 "><a [routerLink]=""
+                            (click)="selectPackage(package.packageId)"
+                            class="btn btn-orange btn-bold my-3 text-uppercase">${{package.packagePrice}}
+                            | Value</a></div>
+
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>

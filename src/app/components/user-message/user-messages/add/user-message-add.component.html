@@ -1,0 +1,6 @@
+<div class="row chat_editor border-top align-items-center flex-nowrap" [formGroup]="userMessageFormGroup">
+    <!-- <a href="" class="chat_attach"><span class="sd-attachment"></span></a>
+    <a href="" class="chat_gallery"><span class="sd-gallery"></span></a> -->
+    <input type="text" maxlength="1000" name="" placeholder="Enter message here" formControlName="message" (keydown.enter)="addUserMessage()"  class="form-control border-0 flex-grow-1">
+    <a routerLink='/' (click)='addUserMessage()'  class="chat_enter text-white pointer"><i class="fab fa-telegram-plane"></i></a>
+</div>

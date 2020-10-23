@@ -1,0 +1,41 @@
+<!-- <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">OSSocialDiscovery</a>
+  <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      <a class="nav-link" (click)="logOut()">Sign out</a>
+    </li>
+  </ul>
+</nav> -->
+<!-- <fieldset *ngIf="showHeader"> -->
+<header class="bg_gray" *ngIf="IsVisiable">
+
+  <div class="container">
+    <nav class="navbar navbar-expand-lg px-0">  
+    <a class="navbar-brand py-0" [routerLink]="" (click)="redirectTo('/home')"><img src="assets/images/logo.png" width="206" height="103" class="img-fluid" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarNavDropdown">
+      <ul class="navbar-nav ml-md-auto">
+        <li class="nav-item active">
+          <a class="nav-link" (click)="redirectTo('/home')" [routerLink]="">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="scrolltoTop($event)"  [routerLink]="">About</a>
+        </li>
+        <li class="nav-item" >
+          <a class="nav-link" (click)="logOut()" [routerLink]="">Login</a>
+        </li>
+        
+      </ul>
+      <div class="header_right_action d-flex align-items-center">
+        <a class="btn btn-orange mr-2 mr-xl-5" [routerLink]="" (click)="redirectTo('/users/add')">Start Social Media Check</a>
+        <a href="https://www.napbs.com/" target="_blank" class="d-inline-block napbs_logo ml-0 ml-xl-4"><img src="assets/images/napbs-logo.jpg" width="154" height="64" /></a>
+      </div>
+    </div>
+    
+    </nav>
+  </div>
+</header>
+
+<!-- </fieldset> -->

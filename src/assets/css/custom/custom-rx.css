@@ -1,0 +1,137 @@
+rx-select.ng-invalid .search-field input.form-control{
+    border-radius: 7px;
+}
+.pointer{
+    cursor: pointer;
+}
+input.icon.down-arrow{
+    background-color: #f6f6f6;
+    background-image: url(~/assets/images/down-arrow.svg);
+    background-size: 10px 7px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    color: #999999;
+}
+input.icon.down-arrow+.input-group-append{
+    display: none;
+}
+.input-group>.form-control.down-arrow:not(:last-child){
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+.chat_editor .form-control.ng-invalid{
+border-bottom: 0!important;
+}
+.chat_thread {
+    padding: 15px 16px;
+}
+.chat_editor {
+    margin: 0 16px 0px 16px;
+}
+rx-table{
+    display: block;
+}
+.table {
+  font-size:18px;
+}
+.pagination .page-item .page-link {
+  padding: 13px 19px;
+}
+.table_pagination .page-link {
+  border: 1px solid #999999;
+  font-size: 18px;
+  color: #999999;
+}
+.pagination .page-item.active .page-link {
+  background: #ea7b4a;
+  color: #fff;
+  box-shadow: none;
+  border-color: #ea7b4a;
+}
+.pagination .page-item a:not([href]):not([tabindex]) {
+  color: #999999;
+}
+
+  .pagination .page-item.active a:not([href]):not([tabindex]), .pagination .page-item a:not([href]):not([tabindex]):hover,
+  .pagination .page-item a:not([href]):not([tabindex]):focus, .pagination .page-item a:not([href]):not([tabindex]):active {
+    color: #ffffff;
+  }
+.rws-pr-pg {
+  font-size: 16px;
+  color: #999999;
+  font-family: opensans-regular;
+}
+.page-item.disabled .page-link {
+  border-color: #999999;
+}
+.past_search_table.w-100 > div, .past_search_table.w-100 > div > table {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+tr.message-unread {
+  background-color: #ededed;
+  font-family: 'opensans-semibold';
+}
+
+.top-header .dropdown-item:focus, .top-header .dropdown-item:hover {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #ea7b4a;
+}
+
+.forgot_password_section {
+  min-width: 400px;
+  width: 100%;
+  max-width: 400px;
+}
+.dropdown-item {
+  padding: .25rem 0.5rem;
+}
+
+  @media (max-width: 992px) {
+    .table, .admin_message_container .past_search_table tbody tr td {
+      font-size: 16px;
+    }
+
+    .admin_message_container table thead tr th i {
+      font-size: 12px;
+      margin-top: 7px;
+      right: 10px;
+    }
+
+    .modal_view_message .modal-header {
+      padding: 15px 15px;
+    }
+
+    .modal_view_message .modal-body {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
+
+  @media (max-width: 575px) {
+    .pagination .page-item .page-link {
+      padding: 8px 12px;
+    }
+
+    .rws-pr-pg {
+      font-size: 14px;
+      line-height: 26px;
+    }
+
+    .forgot_password_section {
+      min-width: auto;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .copyright {
+      font-size: 12px;
+    }
+
+    .pagination .page-item .page-link {
+      padding: 8px 9px;
+    }
+  }

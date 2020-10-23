@@ -1,0 +1,15 @@
+
+<header class="top-header d-flex align-items-center" *ngIf="isLoggedin">	
+  <a [routerLink]="" class="dashboard_menu_toggle" (click)="SidebarToggle()"><i class="sd-menu"></i></a>    
+  <div class="dropdown ml-auto">
+    <a class=" dropdown-toggle text-left profile_dropdown" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Welcome<br>
+      <b>{{userData.fullName}}</b>
+    </a>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+      <a routerLink="/client/detail/{{userData.userId}}" *ngIf="userData.role!=1" class="dropdown-item">Profile</a>
+      <a routerLink="/client/info/{{userData.userId}}" class="dropdown-item">Change Password</a>
+      <a [routerLink]="" class="dropdown-item" (click)="logOut()">Sign out</a>
+    </div>
+  </div>
+</header>

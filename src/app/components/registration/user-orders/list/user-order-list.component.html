@@ -1,0 +1,49 @@
+<div class="main-content d-flex flex-column flex-wrap">
+  <h1 class="dashboard_title pb-3 pb-lg-5 border-bottom">Past Search</h1>
+  <div class="mt-3 mt-lg-5 bg-white admin_message_container border px-0">
+
+
+    <div class="table-responsive" *ngIf="userOrders">
+      <div class="d-flex p-3 flex-column flex-sm-row align-items-sm-center">
+        <h4 class="font_bold ml-lg-2 mb-4 mb-md-0">Previous Packages</h4>
+        <!-- <form class="ml-auto"> -->
+        <div class="input-group message_search ml-sm-auto">
+
+          <!-- <input type="search" class="form-control" name="SearchEvent" (keyup)="tableEvent.searchAll($event.target.value)" placeholder="search" > -->
+
+          <input type="search" class="form-control " name="SearchEvent"
+            (keyup)="tableEvent.searchAll($event.target.value)" placeholder="Search" aria-label="Recipient's username"
+            aria-describedby="basic-addon2">
+          <button class="input-group-append bg-white border-0 px-0">
+            <span class="input-group-text bg-white" id="basic-addon2"><i class="fas fa-search"></i></span>
+          </button>
+
+        </div>
+        <!-- </form> -->
+      </div>
+      <rx-table class=" past_search_table " [totalCount]="totalCount" [pageSize]="5" #tableEvent="grid"
+        [sortableConfig]="sortableConfig" [(dataSource)]="userOrders.vPastOrder" [isStoreProc]="false"
+        [isFilter]="isFilter">
+        <!-- <rx-column field="refNum" sortable="true" title="Ref No."></rx-column> -->
+        <rx-column field="orderId" sortable="true" title="orderId">
+          <!-- <ng-template rxCellTemplate let-callDb>
+      <a (click)="showPopup(callDb)">{{callDb.refNum}}</a>
+    </ng-template> -->
+        </rx-column>
+        <rx-column field="orderDate" title="Order Date"></rx-column>
+        <rx-column field="packageName" title="Package Name"></rx-column>
+        <rx-column field="paymentStatus" title="Payment Status"></rx-column>
+        <rx-column field="orderId" title="Download Report">
+          <ng-template rxCellTemplate let-pastOrder>
+            <ul class="d-flex addmin_message_action pl-0 mb-0">
+              <li><a href={{pastOrder.reportLink}}><i class="far fa-eye"></i></a></li>
+              <li><a href={{pastOrder.reportLink}} target="_blank"><i class="fas fa-download"></i></a></li>
+            </ul>
+          </ng-template> -
+        </rx-column>
+
+      </rx-table>
+
+
+    </div>
+  </div>

@@ -1,0 +1,27 @@
+<div>
+  <rx-toast></rx-toast>
+  <rx-dialog></rx-dialog>
+  <rx-popup></rx-popup>
+  <rx-spinner></rx-spinner>
+</div>
+
+<app-top-bar *ngIf="!isShowDashboard"></app-top-bar>
+
+<div *ngIf="!isShowDashboard"><router-outlet></router-outlet></div>
+
+<div [class.sidebar-hidden]="isSideBarActive" *ngIf="isShowDashboard">
+  <app-top-bar-after-login *ngIf="IsTopBarAfterLogin"></app-top-bar-after-login>
+  <app-top-bar [IsVisiable]="true" *ngIf="!IsTopBarAfterLogin"></app-top-bar>
+  <div class="container-fluid">
+    <div class="row">
+      <app-side-bar></app-side-bar>
+      <!-- <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4"> -->
+        <main role="main" class="col-12 px-0">
+        <router-outlet>
+        </router-outlet>
+      </main>
+    </div>
+  </div>
+</div>
+<app-footer-bar></app-footer-bar>
+
